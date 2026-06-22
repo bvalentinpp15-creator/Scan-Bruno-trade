@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <title>Terminal Algo Trading</title>
+  <meta name="description" content="Simulateur de trading algorithmique en 3 rôles : Scanner, Risk Manager, Coach IA" />
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0A0B07" />
+
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AlgoTerminal" />
+
+  <style>
+    html, body { margin:0; padding:0; background:#0A0B07; }
+    #root { min-height:100vh; }
+    #boot { color:#FFB300; font-family: monospace; padding: 24px; }
+  </style>
+</head>
+<body>
+  <div id="root"><div id="boot">Chargement du terminal…</div></div>
+  <script src="bundle.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
